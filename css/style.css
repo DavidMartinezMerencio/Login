@@ -1,0 +1,13 @@
+td, td>input {
+    width: 250px;
+}
+
+fieldset {
+    width: fit-content;
+}
+
+.formulario {
+    margin-top: 50px;
+    justify-content: center;
+    display: flex;
+}

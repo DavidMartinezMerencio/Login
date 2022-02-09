@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/code.js"></script>
+</head>
+
+<body>
+    <div class="formulario">
+        <form action="" autocomplete="on">
+            <fieldset>
+                <legend>
+                    <h1>Register</h1>
+                </legend>
+                <table class="tableForm">
+                    <tr>
+                        <td><label for="userNameSignup" class="uName">Name: </label></td>
+                        <td><input id="userNameSignup" name="userNameSignup" required="required" type="text"
+                                placeholder="Name" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="userSurnameSignup" class="uSurname">Surnames: </label></td>
+                        <td><input id="userSurnameSignup" name="userSurnameSignup" required="required" type="text"
+                                placeholder="Surnames" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="mailSignup" class="yourMail">Mail: </label></td>
+                        <td><input id="mailSignup" name="mailSignup" required="required" type="email"
+                                placeholder="example@mail.com" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phoneNumber" class="yourPhoneNumber">Phone number: </label></td>
+                        <td><input id="phoneNumber" name="phoneNumber" required="required" type="tel"
+                                placeholder="000000000" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="iban" class="youriban">IBAN: </label></td>
+                        <td><input id="iban" name="iban" required="required" type="text" autocomplete="off"
+                                placeholder="ADCC BBBB SSSS ZZZZ ZZZZ ZZZZ" pattern="[A-Z]{2}[0-9]{22}"
+                                title="Pattern: AA0000000000000000000000(22)" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="swift" class="yourswift">Swift: </label></td>
+                        <td><input id="swift" name="swift" required="required" type="text" autocomplete="off"
+                                placeholder="AAAA-BB-CC-123" pattern="[A-Z]{4}-[A-Z]{2}-[A-Z]{2}-[0-9]{3}"
+                                title="Pattern: AAAA-BB-CC-123" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="birthDate" class="yourbirthDate">Birth date: </label></td>
+                        <td><input id="birthDate" name="birthDate" required="required" type="date" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passwordSignup" class="yourPassword">Password: </label></td>
+                        <td><input id="passwordSignup" name="passwordSignup" required="required" type="password"
+                                placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                title="It must have at least number, one lower case letter, one upper case letter and 8 characters" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="passwordSignupConfirm" class="youpasswd">Confirm password: </label></td>
+                        <td><input id="passwordSignupConfirm" name="passwordSignupConfirm" required="required"
+                                type="password" placeholder="Password confirmation" /></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <p class="signinButton">
+                <input type="submit" value="Register" />
+            </p>
+        </form>
+    </div>
+</body>
+
+</html>
