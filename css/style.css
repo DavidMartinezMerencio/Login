@@ -1,12 +1,47 @@
-td, td>input {
+/* Author: David Martínez Merencio */
+
+body {
+    background-image: url('../img/wallpaper.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+td>input {
     width: 250px;
+}
+
+td>label {
+    font-size: 18px;
+}
+
+p>input {
+    margin-left: 65px;
+    margin-right: 65px;
+    width: 100px;
+    height: 30px;
+    font-size: medium;
+    font-weight: bold;
+    background-color: whitesmoke;
+    border: none;
+}
+
+.tableForm {
+    margin: 30px;
 }
 
 fieldset {
     width: fit-content;
+    border-color: whitesmoke;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 3px;
 }
 
-.formulario {
+legend {
+    color: whitesmoke;
+}
+
+.divForm, .registro {
     margin-top: 50px;
     justify-content: center;
     display: flex;

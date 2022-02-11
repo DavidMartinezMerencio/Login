@@ -1,12 +1,47 @@
-function validateIBAN(iban) {
-    var newIban = iban.toUpperCase(),
+// Author: David Martínez Merencio
+
+document.getElementById("bSubmit").onclick = function() {
+  console.log("Checking fields...");
+  if (validateMail(document.getElementById("mailSignup").value)) {
+    console.log("Correct mail");
+  } else {
+    console.log("Incorrect mail");
+  }
+  if (validateDni(document.getElementById("dni").value)) {
+    console.log("Correct DNI");
+  } else {
+    console.log("Incorrect DNI");
+  }
+  if (validateIban(document.getElementById("iban").value)) {
+    console.log("Correct IBAN");
+  } else {
+    console.log("Incorrect IBAN");
+  }
+}
+
+function validateMail(mail) {
+  return mail.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+}
+
+function validateDni(dni) {
+  let letter = dni.substr(dni.length-1,1);
+  let number = dni.substr(0,dni.length-1) % 23;
+  let lettersList='TRWAGMYFPDXBNJZSQVHLCKET';
+
+  return dni.match(/^\d{8}[a-zA-Z]$/) &&
+    lettersList.substring(number,
+    number+1) == letter.toUpperCase();
+}
+
+function validateIban(iban) {
+  let newIban = iban.toUpperCase(),
       modulo = function(divident, divisor) {
-        var cDivident = '';
-        var cRest = '';
+        let cDivident = '';
+        let cRest = '';
   
-        for (var i in divident) {
-          var cChar = divident[i];
-          var cOperator = cRest + '' + cDivident + '' + cChar;
+        for (let i in divident) {
+          let cChar = divident[i];
+          let cOperator = cRest + '' + cDivident + '' + cChar;
   
           if (cOperator < parseInt(divisor)) {
             cDivident += '' + cChar;
@@ -38,7 +73,5 @@ function validateIBAN(iban) {
   
     return parseInt(modulo(newIban, 97), 10) === 1;
   }
-  
-  
 //   console.log(validateIBAN("ES3001829947919998897258"));
-  
+
