@@ -14,7 +14,7 @@
 
 <body>
     <div class="divForm">
-        <form action="registration.html" autocomplete="on">
+        <form autocomplete="on" action="">
             <fieldset>
                 <legend>
                     <h1>Register</h1>
@@ -54,7 +54,7 @@
                     <tr>
                         <td><label for="swift">Swift: </label></td>
                         <td><input id="swift" name="swift" required="required" type="text" autocomplete="off"
-                                placeholder="AAAA-BB-CC-123" pattern="[A-Z]{4}-[A-Z]{2}-[A-Z]{2}-[0-9]{3}"
+                                placeholder="AAAA-BB-CC-123" pattern="[A-Za-z]{4}-[A-Za-z]{2}-[A-Za-z]{2}-[0-9a-z]{3}"
                                 title="Pattern: AAAA-BB-CC-123" /></td>
                     </tr>
                     <tr>
@@ -76,7 +76,7 @@
                 </table>
             </fieldset>
             <p>
-                <input type="reset" value="Reset" />
+                <input id="bReset" type="reset" value="Reset" />
                 <input id="bSubmit" type="submit" value="Register" />
             </p>
         </form>

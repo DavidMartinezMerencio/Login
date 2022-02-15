@@ -2,20 +2,13 @@
 
 document.getElementById("bSubmit").onclick = function() {
   console.log("Checking fields...");
-  if (validateMail(document.getElementById("mailSignup").value)) {
-    console.log("Correct mail");
+  if (validateMail(document.getElementById("mailSignup").value) && validateDni(document.getElementById("dni").value) && 
+        validateIban(document.getElementById("iban").value) && validateSwift(document.getElementById("swift").value) && 
+        validatePhoneNumber(document.getElementById("phoneNumber").value) &&
+        validatePassword(document.getElementById("passwordSignup"), document.getElementById("passwordSignupConfirm"))) {
+    alert("Successfully registered user");
   } else {
-    console.log("Incorrect mail");
-  }
-  if (validateDni(document.getElementById("dni").value)) {
-    console.log("Correct DNI");
-  } else {
-    console.log("Incorrect DNI");
-  }
-  if (validateIban(document.getElementById("iban").value)) {
-    console.log("Correct IBAN");
-  } else {
-    console.log("Incorrect IBAN");
+    alert("The user could not be registered, check that the fields are correct");
   }
 }
 
@@ -73,5 +66,19 @@ function validateIban(iban) {
   
     return parseInt(modulo(newIban, 97), 10) === 1;
   }
-//   console.log(validateIBAN("ES3001829947919998897258"));
 
+function validateSwift(swift) {
+  return swift.match(/[A-Za-z]{4}-[A-Za-z0-9]{2}-[A-Za-z0-9]{2}-([A-Za-z0-9]{3})?/i);
+}
+
+function validatePhoneNumber(phoneNumber) {
+  phoneNumber = phoneNumber.replaceAll(" ", "");
+  return phoneNumber.length >= 9 && phoneNumber.match(/^[679]{1}[0-9]{8}$/);
+}
+
+function validatePassword(password, repeatedPassword) {
+  if (password == repeatedPassword) {
+    alert("Passwords doesn't match");
+  }
+  return password == repeatedPassword;
+}
